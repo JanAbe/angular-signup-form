@@ -88,10 +88,24 @@ strong {
 
 .password-requirements {
   padding: 0;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   list-style-type: none;
-  margin: 0;
   color: var(--red);
+  margin: .3rem 0 0;
+}
+
+.password-requirement-wrapper {
+  display: flex;
+  gap: 1rem
+}
+
+.password-requirement-wrapper p {
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+.password-requirement-circle {
+  width: 1rem;
 }
 
 .invalid {
@@ -105,4 +119,8 @@ strong {
   font-size: 0.7rem;
   color: var(--red);
   margin: 0;
+}
+
+.checkmark {
+  fill: var(--green);
 }

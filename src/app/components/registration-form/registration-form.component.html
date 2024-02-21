@@ -79,14 +79,60 @@
       type="password"
       placeholder="Password"
     />
-    <div
-      *ngIf="registrationForm.controls.password.errors?.['isStrongPassword'] && (registrationForm.controls.password.dirty || registrationForm.controls.password.touched)"
-    >
-      <p class="password-description">Password should contain:</p>
+    <div>
       <ul class="password-requirements">
-        <li *ngIf="!registrationForm.controls.password.errors?.['isStrongPassword']?.['hasLowerCase']">lower case letters</li>
-        <li *ngIf="!registrationForm.controls.password.errors?.['isStrongPassword']?.['hasUpperCase']">upper case letters</li>
-        <li *ngIf="!registrationForm.controls.password.errors?.['isStrongPassword']?.['hasNumber']">numbers</li>
+        <li>
+          <div class="password-requirement-wrapper">
+            <svg
+              *ngIf="!registrationForm.controls.password.errors?.['isNotStrongPassword']?.['hasLowerCase'] && registrationForm.controls.password.errors?.['isNotStrongPassword']"
+              class="password-requirement-circle"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+            <svg
+              *ngIf="registrationForm.controls.password.errors?.['isNotStrongPassword']?.['hasLowerCase'] || !registrationForm.controls.password.errors?.['isNotStrongPassword']"
+              class="password-requirement-circle checkmark"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+            <p>Lower case letter</p>
+          </div>
+        </li>
+        <li >
+          <div class="password-requirement-wrapper">
+            <svg
+              *ngIf="!registrationForm.controls.password.errors?.['isNotStrongPassword']?.['hasUpperCase'] && registrationForm.controls.password.errors?.['isNotStrongPassword']"
+              class="password-requirement-circle"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+            <svg
+              *ngIf="registrationForm.controls.password.errors?.['isNotStrongPassword']?.['hasUpperCase'] || !registrationForm.controls.password.errors?.['isNotStrongPassword']"
+              class="password-requirement-circle checkmark"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+            <p>Upper case letter</p>
+          </div>
+        </li>
+        <li>
+          <div class="password-requirement-wrapper">
+            <svg
+              *ngIf="!registrationForm.controls.password.errors?.['isNotStrongPassword']?.['hasNumber'] && registrationForm.controls.password.errors?.['isNotStrongPassword']"
+              class="password-requirement-circle"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+            <svg
+              *ngIf="registrationForm.controls.password.errors?.['isNotStrongPassword']?.['hasNumber'] || !registrationForm.controls.password.errors?.['isNotStrongPassword']"
+              class="password-requirement-circle checkmark"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+            <p>Number</p>
+          </div>
+        </li>
+        <li>
+          <div class="password-requirement-wrapper">
+            <svg
+              *ngIf="registrationForm.controls.password.errors?.['minlength']"
+              class="password-requirement-circle"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg>
+            <svg
+              *ngIf="!registrationForm.controls.password.errors?.['minlength']"
+              class="password-requirement-circle checkmark"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>
+            <p>Minimum of 8 characters</p>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

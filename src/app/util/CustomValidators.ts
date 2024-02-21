@@ -1,6 +1,17 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 export class CustomValidators {
+
+  public static minLength(length: number): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+
+      const validLength = value.length >= length;
+
+      return validLength ? null : { minlength: { actual: value.length, required: length } };
+    }
+  };
+
   public static strongPassword(): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
       const value = control.value;
@@ -11,15 +22,7 @@ export class CustomValidators {
 
       const isStrongPassword = hasUpperCase && hasLowerCase && hasNumber;
 
-      return isStrongPassword
-        ? null
-        : {
-            isStrongPassword: {
-              hasUpperCase,
-              hasLowerCase,
-              hasNumber,
-            },
-          };
+      return isStrongPassword ? null : { isNotStrongPassword: { hasUpperCase, hasLowerCase, hasNumber } };
     };
   }
 }

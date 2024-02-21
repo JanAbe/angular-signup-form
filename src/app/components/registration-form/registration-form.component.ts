@@ -22,7 +22,7 @@ export class RegistrationFormComponent {
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, CustomValidators.strongPassword()]],
+    password: ['', [Validators.required, CustomValidators.minLength(8), CustomValidators.strongPassword()]],
   });
 
   constructor(private formBuilder: FormBuilder, private router: Router) {}
