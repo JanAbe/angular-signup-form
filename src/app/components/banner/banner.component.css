@@ -1,0 +1,26 @@
+
+.banner {
+  background-color: var(--blue);
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 7px 1px rgb(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  max-width: 30rem;
+}
+
+.banner p {
+  margin: 0;
+  max-width: 20ch;
+}
+
+strong {
+  font-family: "PoppinsBold", sans-serif;
+}
+
+@media (min-width: 65em) {
+  .banner p {
+    max-width: none;
+  }
+}

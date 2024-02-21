@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+@import "reset.css";
+
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("assets/fonts/Poppins/Poppins-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url("assets/fonts/Poppins/Poppins-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("assets/fonts/Poppins/Poppins-Bold.ttf");
+  font-weight: 700;
+}
+
+:root {
+  --red: hsl(0, 100%, 74%);
+  --green: hsl(154, 59%, 51%);
+
+  --blue: hsl(248, 32%, 49%);
+
+  --dark-blue: hsl(249, 10%, 26%);
+  --grayish-blue: hsl(246, 25%, 77%);
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+body {
+  font-family: "PoppinsRegular", sans-serif;
+  background-color: var(--red);
+  background-image: url("assets/images/bg-intro-mobile.png");
+  color: white;
+}
+
+@media (min-width: 65em) {
+  body {
+    background-image: url("assets/images/bg-intro-desktop.png");
+  }
+}

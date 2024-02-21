@@ -1,0 +1,58 @@
+:host {
+  display: block;
+  margin: 1rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  padding-top: 4rem;
+  font-family: "PoppinsBold", sans-serif;
+  max-width: 30rem;
+}
+
+.description {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  font-family: "PoppinsMedium", sans-serif;
+  font-size: .9rem;
+  max-width: 30rem;
+}
+
+.banner {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 65em) {
+  :host {
+    display: grid;
+    grid-template-areas: "left right";
+    place-content: center;
+    gap: 2rem;
+  }
+
+  .left-half {
+    grid-area: left;
+    max-width: 60ch;
+    display: grid;
+    place-content: center;
+  }
+
+  .right-half {
+    grid-area: right;
+    width: 36rem;
+  }
+
+  .title {
+    font-size: 4rem;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+  }
+
+  .description {
+    text-align: left;
+  }
+}
