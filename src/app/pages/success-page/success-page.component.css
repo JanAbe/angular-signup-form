@@ -1,0 +1,59 @@
+.card {
+  background-color: white;
+  color: var(--dark-blue);
+  max-width: 35rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 2rem;
+}
+
+.checkmark {
+  fill: var(--green);
+  width: 2rem;
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+}
+
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--dark-blue);
+  margin: 1rem 0;
+}
+
+.text {
+  text-align: center;
+}
+
+.button-wrapper {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--green);
+  color: white;
+  border: none;
+  border-bottom: 4px solid #30bc7d;
+  border-radius: 5px;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "PoppinsMedium", sans-serif;
+  text-decoration: none;
+}
+
+.button:hover {
+  cursor: pointer;
+}

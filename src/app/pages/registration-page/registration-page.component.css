@@ -16,7 +16,7 @@
   margin-top: 2rem;
   margin-bottom: 4rem;
   font-family: "PoppinsMedium", sans-serif;
-  font-size: .9rem;
+  font-size: 0.9rem;
   max-width: 30rem;
 }
 
@@ -30,7 +30,7 @@
     display: grid;
     grid-template-areas: "left right";
     place-content: center;
-    gap: 2rem;
+    gap: 3rem;
   }
 
   .left-half {
@@ -46,7 +46,7 @@
   }
 
   .title {
-    font-size: 4rem;
+    font-size: 3.5rem;
     padding: 0;
     margin: 0;
     text-align: left;

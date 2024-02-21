@@ -1,18 +1,103 @@
+<form
+  [formGroup]="registrationForm"
+  (ngSubmit)="onSubmit()"
+  class="registration-form"
+>
+  <div>
+    <label for="firstName" class="sr-only">First Name</label>
+    <input
+      [class.invalid]="
+      registrationForm.controls.firstName.invalid &&
+      (registrationForm.controls.firstName.dirty ||
+        registrationForm.controls.firstName.touched)
+    "
+      (blur)="capitalize($event, 'firstName')"
+      formControlName="firstName"
+      id="firstName"
+      class="registration-input"
+      type="text"
+      placeholder="First Name"
+    />
+    <p class="error-text" *ngIf="registrationForm.controls.firstName.errors?.['required'] && (registrationForm.controls.firstName.dirty || registrationForm.controls.firstName.touched)">
+      Is required
+    </p>
+  </div>
 
-<form class="registration-form">
-  <label class="sr-only">First Name</label>
-  <input class="registration-input" type="text" placeholder="First Name">
+  <div>
+    <label for="lastName" class="sr-only">Last Name</label>
+    <input
+      [class.invalid]="
+      registrationForm.controls.lastName.invalid &&
+      (registrationForm.controls.lastName.dirty ||
+        registrationForm.controls.lastName.touched)
+    "
+      (blur)="capitalize($event, 'lastName')"
+      formControlName="lastName"
+      id="lastName"
+      class="registration-input"
+      type="text"
+      placeholder="Last Name"
+    />
+    <p class="error-text" *ngIf="registrationForm.controls.lastName.errors?.['required'] && (registrationForm.controls.lastName.dirty || registrationForm.controls.lastName.touched)">
+      Is required
+    </p>
+  </div>
 
-  <label class="sr-only">Last Name</label>
-  <input class="registration-input" type="text" placeholder="Last Name">
+  <div>
+    <label for="email" class="sr-only">Email Address</label>
+    <input
+      [class.invalid]="
+      registrationForm.controls.email.invalid &&
+      (registrationForm.controls.email.dirty ||
+        registrationForm.controls.email.touched)
+    "
+      formControlName="email"
+      id="email"
+      class="registration-input"
+      type="email"
+      placeholder="Email Address"
+    />
+    <p class="error-text" *ngIf="registrationForm.controls.email.errors?.['required'] && (registrationForm.controls.email.dirty || registrationForm.controls.email.touched)">
+      Is required
+    </p>
+    <p class="error-text" *ngIf="registrationForm.controls.email.errors?.['email'] && (registrationForm.controls.email.dirty || registrationForm.controls.email.touched)">
+      Email must be valid
+    </p>
+  </div>
 
-  <label class="sr-only">Email Address</label>
-  <input class="registration-input" type="email" placeholder="Email Address">
+  <div>
+    <label for="password" class="sr-only">Password</label>
+    <input
+      [class.invalid]="
+      registrationForm.controls.password.invalid &&
+      (registrationForm.controls.password.dirty ||
+        registrationForm.controls.password.touched)
+    "
+      formControlName="password"
+      id="password"
+      class="registration-input"
+      type="password"
+      placeholder="Password"
+    />
+    <div
+      *ngIf="registrationForm.controls.password.errors?.['isStrongPassword'] && (registrationForm.controls.password.dirty || registrationForm.controls.password.touched)"
+    >
+      <p class="password-description">Password should contain:</p>
+      <ul class="password-requirements">
+        <li *ngIf="!registrationForm.controls.password.errors?.['isStrongPassword']?.['hasLowerCase']">lower case letters</li>
+        <li *ngIf="!registrationForm.controls.password.errors?.['isStrongPassword']?.['hasUpperCase']">upper case letters</li>
+        <li *ngIf="!registrationForm.controls.password.errors?.['isStrongPassword']?.['hasNumber']">numbers</li>
+      </ul>
+    </div>
+  </div>
 
-  <label class="sr-only">Password</label>
-  <input class="registration-input" type="password" placeholder="Password">
+  <button [disabled]="registrationForm.invalid" class="submit-button" type="submit" aria-describedby="tos">
+    <svg class="spinner" *ngIf="isLoading" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M222.7 32.1c5 16.9-4.6 34.8-21.5 39.8C121.8 95.6 64 169.1 64 256c0 106 86 192 192 192s192-86 192-192c0-86.9-57.8-160.4-137.1-184.1c-16.9-5-26.6-22.9-21.5-39.8s22.9-26.6 39.8-21.5C434.9 42.1 512 140 512 256c0 141.4-114.6 256-256 256S0 397.4 0 256C0 140 77.1 42.1 182.9 10.6c16.9-5 34.8 4.6 39.8 21.5z"/></svg>
+    <p>Claim your free trial</p>
+  </button>
 
-  <button class="submit-button" type="submit">Claim your free trial</button>
-
-  <p class="registration-tos">By clicking the button, you are aggreeing to our <strong><a>Terms and Services</a></strong></p>
+  <p id="tos" class="registration-tos">
+    By clicking the button, you are aggreeing to our
+    <strong><a>Terms and Services</a></strong>
+  </p>
 </form>

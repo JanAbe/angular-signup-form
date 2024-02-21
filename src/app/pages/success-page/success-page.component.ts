@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-success-page',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './success-page.component.html',
-  styleUrl: './success-page.component.css'
+  styleUrl: './success-page.component.css',
 })
-export class SuccessPageComponent {
-
-}
+export class SuccessPageComponent {}
