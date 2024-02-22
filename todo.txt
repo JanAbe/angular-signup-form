@@ -5,6 +5,8 @@ check - (ook al is dit niet zo handig voor ux) de voor- en achternaam automatisc
 check - een spinner maken in de registratie knop om de ux te verbeteren.
 check - een succesvol geregistreerd pagina maken waar naartoe genavigeerd wordt als het verzoek succesvol gemaakt is
 check - bekijk of de pagina titels kloppen voor de verschillende routes (registratie form, success pagina)
-backend maken om een verzoek te kunnen sturen
+check - toon checkbox als wachtwoord requirement aan voldaan is
+check - schrijf angular unit-testen om te kijken of alles werkt
+schrijf integratietesten met cypress
 een angular service maken om een http verzoek te kunnen versturen
-schrijf angular testen om te kijken of alles werkt
+backend maken om een verzoek te kunnen sturen
