@@ -7,6 +7,7 @@ check - een succesvol geregistreerd pagina maken waar naartoe genavigeerd wordt 
 check - bekijk of de pagina titels kloppen voor de verschillende routes (registratie form, success pagina)
 check - toon checkbox als wachtwoord requirement aan voldaan is
 check - schrijf angular unit-testen om te kijken of alles werkt
-schrijf integratietesten met cypress
+check - schrijf integratietesten met cypress
+check - in een klein project kijken of ik met de hand cypress kan toevoegen.
 een angular service maken om een http verzoek te kunnen versturen
-backend maken om een verzoek te kunnen sturen
+backend maken om een verzoek naar toe te kunnen sturen
