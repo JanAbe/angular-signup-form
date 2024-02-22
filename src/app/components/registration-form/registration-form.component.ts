@@ -39,7 +39,7 @@ export class RegistrationFormComponent {
     setTimeout(() => {
       this.router.navigateByUrl('/success');
       this.isLoading = false;
-    }, 5000)
+    }, 3000)
 
   }
 
