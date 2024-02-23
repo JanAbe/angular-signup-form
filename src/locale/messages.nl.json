@@ -1,0 +1,10 @@
+{
+  "locale": "nl-NL",
+  "translations": {
+    "banner.text": "{$START_TAG_STRONG}Probeer het gratis voor 7 dagen{$CLOSE_TAG_STRONG}, daarna kost het €20 per maand",
+    "registration-form.firstName.placeholder": "Voornaam",
+    "registration-form.firstName.isRequired": "Is verplicht",
+    "registration-page.title": "Leer te programmeren door naar anderen te kijken!",
+    "registration-page.description": "Bekijk hoe ervaren ontwikkelaars problemen in real-time oplossen. Kijken naar tutorials is goed maar begrijpen hoe ontwikkelaars denken is van onschatbare waarde."
+  }
+}

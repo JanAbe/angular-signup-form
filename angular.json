@@ -9,10 +9,19 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
+      "i18n": {
+        "locales": {
+          "nl": {
+            "translation": "src/locale/messages.nl.json"
+          }
+        },
+        "sourceLocale": "en-US"
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": true,
             "outputPath": "dist/fm-signup-form",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -56,6 +65,9 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+            },
+            "nl": {
+              "localize": ["nl"]
             }
           },
           "defaultConfiguration": "production"
@@ -68,6 +80,9 @@
             },
             "development": {
               "buildTarget": "fm-signup-form:build:development"
+            },
+            "nl": {
+              "buildTarget": "fm-signup-form:build:development,nl"
             }
           },
           "defaultConfiguration": "development"

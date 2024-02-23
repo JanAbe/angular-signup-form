@@ -6,6 +6,7 @@
   <div>
     <label for="firstName" class="sr-only">First Name</label>
     <input
+      i18n-placeholder="@@registration-form.firstName.placeholder"
       [class.invalid]="
       registrationForm.controls.firstName.invalid &&
       (registrationForm.controls.firstName.dirty ||
@@ -18,7 +19,7 @@
       type="text"
       placeholder="First Name"
     />
-    <p data-test-id="firstNameError" class="error-text" *ngIf="registrationForm.controls.firstName.errors?.['required'] && (registrationForm.controls.firstName.dirty || registrationForm.controls.firstName.touched)">
+    <p i18n="@@registration-form.firstName.isRequired" data-test-id="firstNameError" class="error-text" *ngIf="registrationForm.controls.firstName.errors?.['required'] && (registrationForm.controls.firstName.dirty || registrationForm.controls.firstName.touched)">
       Is required
     </p>
   </div>

@@ -13,4 +13,8 @@ check - hele simpele backend maken om een verzoek naar toe te kunnen sturen
 check - een angular service maken om een http verzoek te kunnen versturen
 check - foutmelding tonen in de applicatie als het versturen van een verzoek gefaald is (bijv. door een toast te laten zien ofzo)
 check - gebruik een angular environment file
-i18n toevoegen aan zodat je de app in meerdere talen kunt gebruiken
+check - i18n toevoegen aan zodat je de app in meerdere talen kunt gebruiken (nederlands en engels)
+een ngix server gebruiken om m'n angular app te deployen en lokaal te laten draaien
+
+
+blogpost schrijven over het toevoegen van i18n aan angular

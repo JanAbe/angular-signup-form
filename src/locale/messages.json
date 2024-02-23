@@ -1,0 +1,10 @@
+{
+  "locale": "en-US",
+  "translations": {
+    "banner.text": "{$START_TAG_STRONG}Try it free 7 days{$CLOSE_TAG_STRONG} then $20/mo. thereafter",
+    "registration-form.firstName.placeholder": "First Name",
+    "registration-form.firstName.isRequired": " Is required ",
+    "registration-page.title": "Learn to code by watching others",
+    "registration-page.description": " See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable. "
+  }
+}
