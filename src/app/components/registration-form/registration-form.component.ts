@@ -10,6 +10,7 @@ import {NgIf} from "@angular/common";
 import {Router} from "@angular/router";
 import {UserService} from "../../user.service";
 import {User} from "../../model";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-registration-form',
@@ -27,7 +28,7 @@ export class RegistrationFormComponent {
     password: ['', [Validators.required, CustomValidators.minLength(8), CustomValidators.strongPassword()]],
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private toastr: ToastrService) {}
 
   onSubmit(): void {
     this.isLoading = true;
@@ -46,9 +47,12 @@ export class RegistrationFormComponent {
       next: (createdUser) => {
         console.log(createdUser);
         this.router.navigateByUrl('/success');
+        this.toastr.success('Account successfully registered', '', {
+          timeOut: 5000
+        });
       },
       error: (error) => {
-        console.error(error);
+        this.toastr.error('Error creating an account');
       }
     }).add(() => {
       this.isLoading = false;
