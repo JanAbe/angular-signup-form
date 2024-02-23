@@ -9,5 +9,8 @@ check - toon checkbox als wachtwoord requirement aan voldaan is
 check - schrijf angular unit-testen om te kijken of alles werkt
 check - schrijf integratietesten met cypress
 check - in een klein project kijken of ik met de hand cypress kan toevoegen.
-een angular service maken om een http verzoek te kunnen versturen
-backend maken om een verzoek naar toe te kunnen sturen
+check - hele simpele backend maken om een verzoek naar toe te kunnen sturen
+check - een angular service maken om een http verzoek te kunnen versturen
+foutmelding tonen in de applicatie als het versturen van een verzoek gefaald is (bijv. door een toast te laten zien ofzo)
+een env file gebruiken om daar de api endpoint uit te lezen
+i18n toevoegen aan zodat je de app in meerdere talen kunt gebruiken

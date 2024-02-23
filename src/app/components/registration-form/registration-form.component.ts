@@ -8,6 +8,8 @@ import {
 import { CustomValidators } from '../../util/CustomValidators';
 import {NgIf} from "@angular/common";
 import {Router} from "@angular/router";
+import {UserService} from "../../user.service";
+import {User} from "../../model";
 
 @Component({
   selector: 'app-registration-form',
@@ -25,7 +27,7 @@ export class RegistrationFormComponent {
     password: ['', [Validators.required, CustomValidators.minLength(8), CustomValidators.strongPassword()]],
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService) {}
 
   onSubmit(): void {
     this.isLoading = true;
@@ -33,14 +35,24 @@ export class RegistrationFormComponent {
       return;
     }
 
-    // todo: call httpService to make request to backend
-    console.log(this.registrationForm.value);
+    const user: User = {
+      firstName: this.registrationForm.value.firstName!,
+      lastName: this.registrationForm.value.lastName!,
+      email: this.registrationForm.value.email!,
+      password: this.registrationForm.value.password!,
+    }
 
-    setTimeout(() => {
-      this.router.navigateByUrl('/success');
+    this.userService.createUser(user).subscribe({
+      next: (createdUser) => {
+        console.log(createdUser);
+        this.router.navigateByUrl('/success');
+      },
+      error: (error) => {
+        console.error(error);
+      }
+    }).add(() => {
       this.isLoading = false;
-    }, 3000)
-
+    })
   }
 
   /**
