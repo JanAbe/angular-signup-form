@@ -2,6 +2,8 @@
   "locale": "nl-NL",
   "translations": {
     "banner.text": "{$START_TAG_STRONG}Probeer het gratis voor 7 dagen{$CLOSE_TAG_STRONG}, daarna kost het €20 per maand",
+    "navbar.nederlands": "Nederlands",
+    "navbar.engels": "English",
     "registration-form.firstName.placeholder": "Voornaam",
     "registration-form.firstName.isRequired": "Is verplicht",
     "registration-page.title": "Leer te programmeren door naar anderen te kijken!",

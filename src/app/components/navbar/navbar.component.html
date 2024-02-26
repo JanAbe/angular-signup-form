@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li (click)="switchLanguage('nl')">
+      <p i18n="@@navbar.nederlands">Nederlands</p>
+      <img src="assets/images/flag-nl.png" alt="dutch flag">
+    </li>
+
+    <li (click)="switchLanguage('en-US')">
+      <p i18n="@@navbar.engels">English</p>
+      <img src="assets/images/flag-en.png" (click)="switchLanguage('en-US')" alt="flag of great britain">
+    </li>
+  </ul>
+</nav>
