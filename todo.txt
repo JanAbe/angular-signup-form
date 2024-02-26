@@ -18,3 +18,8 @@ check - een ngix server gebruiken om m'n angular app te deployen en lokaal te la
 chekc - kijken of het instellen van je preferred language (http language accept) de juiste taal toont.
 check - het mogelijk maken voor een gebruiker om van taal te wisselen.
 check - blogpost schrijven over het toevoegen van i18n aan angular
+
+
+docker system prune
+docker build -t nginx-angular-image .
+docker run --name nginx-angular-container -p 8081:8081 nginx-angular-image

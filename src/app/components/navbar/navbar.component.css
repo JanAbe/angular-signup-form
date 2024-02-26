@@ -1,12 +1,10 @@
-ul {
-  list-style-type: none;
+nav {
   display: grid;
-  place-items: end;
-  gap: 1rem;
-  padding: 0;
+  place-items: flex-end;
+  position: relative;
 }
 
-li {
+div {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -15,9 +13,48 @@ li {
   border: 3px solid transparent;
 }
 
+svg {
+  fill: white;
+  width: 1rem;
+  transition: 1s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+ul {
+  position: absolute;
+  margin-right: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+  top: 4rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .3rem;
+  border: 3px solid transparent;
+  gap: 1rem;
+}
+
 li:hover {
   cursor: pointer;
-  border: 3px dashed white;
+  border: 3px dashed black;
 }
 
 img {
