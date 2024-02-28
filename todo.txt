@@ -18,8 +18,15 @@ check - een ngix server gebruiken om m'n angular app te deployen en lokaal te la
 chekc - kijken of het instellen van je preferred language (http language accept) de juiste taal toont.
 check - het mogelijk maken voor een gebruiker om van taal te wisselen.
 check - blogpost schrijven over het toevoegen van i18n aan angular
+check - drop down list maken met ondersteunde talen en toon geselecteerde taal
+check - uitzoeken hoe ik m'n dropdownlist a11y kan maken
+check - docker container deployen in aws
+check - cloudformation gebruiken om de app te deployen ipv via de console
 
-
+run app lokaal via docker:
 docker system prune
 docker build -t nginx-angular-image .
-docker run --name nginx-angular-container -p 8081:8081 nginx-angular-image
+docker run --name nginx-angular-container -p 80:80 nginx-angular-image
+
+aws cloudformation validate-template --template-body file://cloudformation-template.yml
+aws cloudformation create-stack --stack-name cf-nginx-angular-stack --template-body file://./cloudformation-template.yml --capabilities CAPABILITY_NAMED_IAM

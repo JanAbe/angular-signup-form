@@ -4,19 +4,44 @@ nav {
   position: relative;
 }
 
-div {
+.selected-language {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 0 1rem;
+  margin: 1rem;
   padding: .3rem;
   border: 3px solid transparent;
+  background-color: transparent;
+}
+
+.selected-language:hover {
+  cursor: pointer;
+  border: 3px dashed white;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: white;
+  border: 3px solid transparent;
+}
+
+.language-button {
+  width: 100%;
+  padding: .3rem;
+}
+
+.language-button:hover {
+  cursor: pointer;
+  border: 3px dashed black;
 }
 
 svg {
   fill: white;
   width: 1rem;
-  transition: 1s;
+  transition: .5s;
 }
 
 .rotate {
@@ -34,7 +59,7 @@ svg {
 ul {
   position: absolute;
   margin-right: 1rem;
-  margin-top: 0;
+  margin-top: 1.5rem;
   margin-bottom: 0;
   list-style-type: none;
   padding: 1rem;
@@ -47,14 +72,8 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: .3rem;
   border: 3px solid transparent;
   gap: 1rem;
-}
-
-li:hover {
-  cursor: pointer;
-  border: 3px dashed black;
 }
 
 img {

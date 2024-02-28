@@ -1,0 +1,69 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  ECSCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: 'cf-nginx-angular-cluster'
+      CapacityProviders:
+        - 'FARGATE'
+
+  TaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      ContainerDefinitions:
+        - Name: 'cf-nginx-angular-task-definition'
+          Image: '357839314461.dkr.ecr.eu-central-1.amazonaws.com/test:latest'
+          PortMappings:
+            - AppProtocol: http
+              ContainerPort: 80
+              HostPort: 80
+              Protocol: tcp
+      Cpu: 256
+      Memory: 512
+      ExecutionRoleArn: !GetAtt ExecutionRole.Arn
+      Family: 'cf-nginx-angular-task-definition-family'
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - 'FARGATE'
+
+  ECSService:
+    Type: AWS::ECS::Service
+    Properties:
+      ServiceName: 'cf-nginx-angular-service'
+      Cluster: !GetAtt ECSCluster.Arn
+      DesiredCount: 1
+      LaunchType: 'FARGATE'
+      TaskDefinition: !Ref TaskDefinition
+      NetworkConfiguration:
+        AwsvpcConfiguration:
+          AssignPublicIp: 'ENABLED'
+          SecurityGroups:
+            - !GetAtt SecurityGroup.GroupId
+          Subnets:
+            - 'subnet-5e49ca34'
+
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: 'cf-nginx-angular-security-group'
+      GroupDescription: 'Allows http requests from everywhere'
+      SecurityGroupIngress:
+        CidrIp: '0.0.0.0/0'
+        IpProtocol: tcp
+        FromPort: 80
+        ToPort: 80
+
+  ExecutionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: 'cf-nginx-angular-ecs-role'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          Effect: 'Allow'
+          Principal:
+            Service:
+              - ecs-tasks.amazonaws.com
+          Action: 'sts:AssumeRole'
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy'
